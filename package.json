@@ -1,0 +1,17 @@
+{
+  "name": "elyndria-token-assets",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A compact, public GitHub Pages token-image library for the Elyndria battle map.",
+  "type": "module",
+  "scripts": {
+    "process-tokens": "node scripts/process-tokens.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "sharp": "0.35.3"
+  }
+}

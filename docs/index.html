@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Elyndria Token Assets</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="masthead">
+        <div>
+          <p class="eyebrow">Public Battle Asset Repository</p>
+          <h1>Elyndria Token Library</h1>
+          <p class="intro">Compact, reusable portraits for the Elyndria battle map. Asset identifiers intentionally contain no campaign information.</p>
+        </div>
+        <div class="rune" aria-hidden="true">&#10022;</div>
+      </header>
+
+      <section class="summary" aria-label="Library summary">
+        <article><span>Stored tokens</span><strong id="asset-count">0 / 250</strong></article>
+        <article><span>Storage used</span><strong id="storage-used">0 B / 25 MB</strong></article>
+        <article><span>Image format</span><strong>256px WebP</strong></article>
+      </section>
+
+      <section class="toolbar">
+        <label for="search">Find an asset ID</label>
+        <input id="search" type="search" placeholder="Search by opaque asset ID" autocomplete="off" />
+      </section>
+
+      <p id="status" class="status" role="status">Loading token index...</p>
+      <section id="gallery" class="gallery" aria-label="Token image gallery"></section>
+    </main>
+    <template id="asset-template">
+      <article class="asset-card">
+        <img width="256" height="256" alt="Public token artwork" loading="lazy" decoding="async" />
+        <div>
+          <code></code>
+          <span class="asset-size"></span>
+        </div>
+        <button type="button">Copy asset ID</button>
+      </article>
+    </template>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+name: Process token images
+
+on:
+  push:
+    paths:
+      - "incoming/**"
+      - "docs/tokens/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: token-image-processing
+  cancel-in-progress: false
+
+jobs:
+  convert-and-index:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Test converter
+        run: npm test
+
+      - name: Convert and index token images
+        run: npm run process-tokens
+
+      - name: Save generated assets
+        shell: bash
+        run: |
+          if git diff --quiet -- docs/token-index.json docs/tokens incoming; then
+            echo "No token asset changes to save."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/token-index.json docs/tokens incoming
+          git commit -m "Process token assets"
+          git push
