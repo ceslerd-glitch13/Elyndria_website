@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { mkdtemp, mkdir, readFile, readdir, stat, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -68,3 +69,26 @@ test("rebuilds the manifest when no incoming images exist", async () => {
   assert.equal(manifest.schemaVersion, 1);
   assert.equal(manifest.summary.totalBytes, 0);
 });
+
+
+test("indexes compliant JPEG and PNG assets without converting them", async () => {
+  const root = await fixtureRoot();
+  const tokensDirectory = path.join(root, "docs", "tokens");
+  const jpeg = await sharp({
+    create: { width: 256, height: 256, channels: 3, background: { r: 100, g: 30, b: 20 } }
+  }).jpeg().toBuffer();
+  const png = await sharp({
+    create: { width: 256, height: 256, channels: 4, background: { r: 20, g: 80, b: 120, alpha: 1 } }
+  }).png().toBuffer();
+  const jpegId = createHash("sha256").update(jpeg).digest("hex").slice(0, 24);
+  const pngId = createHash("sha256").update(png).digest("hex").slice(0, 24);
+  await writeFile(path.join(tokensDirectory, `${jpegId}.jpg`), jpeg);
+  await writeFile(path.join(tokensDirectory, `${pngId}.png`), png);
+
+  const result = await processTokenAssets({ root });
+  assert.equal(result.manifest.summary.assetCount, 2);
+  assert.deepEqual(result.manifest.limits.formats, ["jpeg", "png"]);
+  assert.equal(result.manifest.limits.format, "mixed");
+  assert.deepEqual(result.manifest.assets.map((asset) => asset.format).sort(), ["jpeg", "png"]);
+});
+
