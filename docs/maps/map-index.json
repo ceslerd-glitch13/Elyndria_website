@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-22",
+  "basePath": "docs/maps",
+  "assets": [
+    {
+      "id": "map-world-elyndria",
+      "name": "Elyndria World Map",
+      "file": "world/map-world-elyndria.webp",
+      "status": "canon",
+      "sha256": "794724ffac11701f80dddf126abf32dfc45f309043c17643735fcf49b9a5e3c6"
+    },
+    {
+      "id": "map-city-ravensport-overall",
+      "name": "Ravensport",
+      "file": "cities/map-city-ravensport-overall.webp",
+      "status": "canon-brief",
+      "sha256": "23079d4c415d7e2189e98ed21f0eabc927a408cfa3b0cbee5e2b4489fa20ba72"
+    },
+    {
+      "id": "map-city-faerindel-overall",
+      "name": "Faerindel",
+      "file": "cities/map-city-faerindel-overall.webp",
+      "status": "canon-brief",
+      "sha256": "82ab9155fc9791a2b479e0f8fbe193af0aa0f06bb10a4dce59e236db1b5613d1"
+    },
+    {
+      "id": "map-city-ironforge-overall",
+      "name": "Ironforge",
+      "file": "cities/map-city-ironforge-overall.webp",
+      "status": "canon-brief",
+      "sha256": "fed20069aa095e7cb3eea967c2786f3da8fa9c72699713bc14b39cd3f3707080"
+    },
+    {
+      "id": "map-city-deepanvil-overall",
+      "name": "Deepanvil",
+      "file": "cities/map-city-deepanvil-overall.webp",
+      "status": "canon-brief",
+      "sha256": "6ba4afb3e6ad69854db853ccf2b1c78983e88e9c2dde91c8b7d27b39a04d30ba"
+    },
+    {
+      "id": "map-city-silvandar-overall",
+      "name": "Silvandar",
+      "file": "cities/map-city-silvandar-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "98ab0a929dfe704541d9d4a6c36620dfb2fee3cf6e0e3e1422d639b52adfcdc5"
+    },
+    {
+      "id": "map-city-thalorien-overall",
+      "name": "Thalorien",
+      "file": "cities/map-city-thalorien-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "0a244e94b8a778da644164771d0dc81f66450100ffd768e030c025628a57d3e7"
+    },
+    {
+      "id": "map-city-eloweth-overall",
+      "name": "Eloweth",
+      "file": "cities/map-city-eloweth-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "556b805bb25c2e5baa47b8a6655ba5a4b4aedf0a90de4fc7aa048254929299e4"
+    },
+    {
+      "id": "map-city-lirael-overall",
+      "name": "Lirael",
+      "file": "cities/map-city-lirael-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "6fe68f1313291db3077e2682f9c820d745a9870a74e4820e70fb28a22b32a3a8"
+    },
+    {
+      "id": "map-city-arvandor-overall",
+      "name": "Arvandor",
+      "file": "cities/map-city-arvandor-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "80fd794dfeb69573a5c59b41160385db5dfe9809b583da933d8b0f67eb5b30c5"
+    },
+    {
+      "id": "map-city-stonefist-overall",
+      "name": "Stonefist",
+      "file": "cities/map-city-stonefist-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "d06fe5d1cd115d428a4d8dd2b759ca473636c3993b466b28412b86a4466ab10e"
+    },
+    {
+      "id": "map-city-goldhammer-overall",
+      "name": "Goldhammer",
+      "file": "cities/map-city-goldhammer-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "14720439632c2469e9511210bc8a9f2221aa456b38e65db3d27f5eec088c2dc4"
+    },
+    {
+      "id": "map-city-runeforge-overall",
+      "name": "Runeforge",
+      "file": "cities/map-city-runeforge-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "ac934afbf63bce90ef30d6980748525f0a9de21fed8883b18dfeaebf7514a5cf"
+    },
+    {
+      "id": "map-city-khazadun-overall",
+      "name": "Khazadun",
+      "file": "cities/map-city-khazadun-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "7f538b786adf003028fd04d3529b674da989eae19299b0cf96d9c432c38c379e"
+    },
+    {
+      "id": "map-city-havenport-overall",
+      "name": "Havenport",
+      "file": "cities/map-city-havenport-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "7531a387190b63d3449efa2794d0a6c40e3849d66c4fe9e17c92410c59970be0"
+    },
+    {
+      "id": "map-city-newbridge-overall",
+      "name": "Newbridge",
+      "file": "cities/map-city-newbridge-overall-draft.webp",
+      "status": "dm-draft-non-canon",
+      "sha256": "a32e5ef68d2a234070bc0d8f9423e7a41b6e6bb0d0101c5d417d3513caf947f5"
+    },
+    {
+      "id": "map-location-rusty-anchor",
+      "name": "The Rusty Anchor",
+      "file": "locations/rusty-anchor.webp",
+      "status": "canon-brief",
+      "sha256": "57aa34d8bf10e7b5c01952a4e2b2a057fd92e4988d4986bc14655ac772bc1ddf",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 246920
+    },
+    {
+      "id": "map-location-wayward-gull",
+      "name": "The Wayward Gull",
+      "file": "locations/wayward-gull.webp",
+      "status": "canon-brief",
+      "sha256": "4e9dedd36fde5df0a49bf52387cac85846dfc20090baf0bf9be9e52032fbac6d",
+      "width": 1672,
+      "height": 941,
+      "bytes": 214654
+    },
+    {
+      "id": "map-location-netmakers-bunkhouse",
+      "name": "Netmaker's Bunkhouse",
+      "file": "locations/netmakers-bunkhouse.webp",
+      "status": "canon-brief",
+      "sha256": "aa9f91945b043c8c52eb751b88b0a9938e25409013a961949760656c9eb1bf1c",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 195946
+    },
+    {
+      "id": "map-location-old-gull-sailworks",
+      "name": "Old Gull Sailworks",
+      "file": "locations/old-gull-sailworks.webp",
+      "status": "canon-brief",
+      "sha256": "bfccfee675f5117039f3028cb5f6a5fabdd7f503cf5957e1abaeb7c783fbabb0",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 225406
+    }
+  ]
+}
