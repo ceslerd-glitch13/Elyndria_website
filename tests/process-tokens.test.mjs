@@ -92,3 +92,21 @@ test("indexes compliant JPEG and PNG assets without converting them", async () =
   assert.deepEqual(result.manifest.assets.map((asset) => asset.format).sort(), ["jpeg", "png"]);
 });
 
+test("preserves a valid stable asset ID when replacement artwork changes", async () => {
+  const root = await fixtureRoot();
+  const tokensDirectory = path.join(root, "docs", "tokens");
+  const stableId = "0123456789abcdef01234567";
+  const replacement = await sharp({
+    create: { width: 256, height: 256, channels: 4, background: { r: 70, g: 40, b: 120, alpha: 0.8 } }
+  }).webp().toBuffer();
+  const digest = createHash("sha256").update(replacement).digest("hex");
+  assert.notEqual(digest.slice(0, 24), stableId);
+  await writeFile(path.join(tokensDirectory, `${stableId}.webp`), replacement);
+
+  const result = await processTokenAssets({ root });
+  assert.equal(result.manifest.summary.assetCount, 1);
+  assert.equal(result.manifest.assets[0].id, stableId);
+  assert.equal(result.manifest.assets[0].file, `tokens/${stableId}.webp`);
+  assert.equal(result.manifest.assets[0].sha256, digest);
+  assert.equal(result.manifest.assets[0].bytes, replacement.length);
+});
