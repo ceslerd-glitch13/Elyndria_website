@@ -79,8 +79,8 @@ async function buildManifest(tokensDirectory) {
     const extension = path.extname(filename).toLowerCase();
     const expectedFormat = extension === ".jpg" || extension === ".jpeg" ? "jpeg" : extension.slice(1);
     const id = path.basename(filename, extension);
-    if (id !== digest.slice(0, 24)) {
-      throw new Error(`${filename} does not match its content-derived asset ID`);
+    if (!/^[a-f0-9]{24}$/.test(id)) {
+      throw new Error(`${filename} does not contain a valid stable asset ID`);
     }
     const metadata = await sharp(bytes, { failOn: "error" }).metadata();
     if (metadata.format !== expectedFormat || metadata.width !== POLICY.width || metadata.height !== POLICY.height) {
